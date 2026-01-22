@@ -77,8 +77,9 @@ Sub ТЗ_ВставитьРазделВопросы()
         2, DefaultTableBehavior:=wdWord9TableBehavior, AutoFitBehavior:= _
         wdAutoFitFixed
     Set tbl = Selection.Tables(1)
+    wdth = tbl.Columns(1).Width + tbl.Columns(2).Width
     tbl.Columns(1).SetWidth ColumnWidth:=35, RulerStyle:=wdAdjustNone
-    tbl.Columns(2).SetWidth ColumnWidth:=709, RulerStyle:=wdAdjustNone
+    tbl.Columns(2).SetWidth ColumnWidth:=wdth - tbl.Columns(1).Width, RulerStyle:=wdAdjustNone
     
     tbl.Rows(1).Range.Font.Bold = True
     tbl.Rows(1).Shading.Texture = wdTextureNone
@@ -116,9 +117,10 @@ Sub ТЗ_ВставитьРазделТребования()
         3, DefaultTableBehavior:=wdWord9TableBehavior, AutoFitBehavior:= _
         wdAutoFitFixed
     Set tbl = Selection.Tables(1)
+    wdth = tbl.Columns(1).Width + tbl.Columns(2).Width + tbl.Columns(3).Width
     tbl.Columns(1).SetWidth ColumnWidth:=35, RulerStyle:=wdAdjustNone
     tbl.Columns(2).SetWidth ColumnWidth:=150, RulerStyle:=wdAdjustNone
-    tbl.Columns(3).SetWidth ColumnWidth:=559, RulerStyle:=wdAdjustNone
+    tbl.Columns(3).SetWidth ColumnWidth:=wdth - (tbl.Columns(1).Width + tbl.Columns(2).Width), RulerStyle:=wdAdjustNone
     
     tbl.Rows(1).Range.Font.Bold = True
     tbl.Rows(1).Shading.Texture = wdTextureNone
@@ -144,3 +146,4 @@ Sub ТЗ_ВставитьРазделТребования()
     tbl.Rows(6).Cells(1).Range.Text = "Т.5"
     tbl.Rows(6).Cells(1).Range.Font.Bold = True
 End Sub
+
