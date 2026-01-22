@@ -103,3 +103,44 @@ Sub ВставитьРазделВопросы()
     tbl.Rows(6).Cells(1).Range.Text = "В.5"
     tbl.Rows(6).Cells(1).Range.Font.Bold = True
 End Sub
+
+Sub ВставитьРазделТребования()
+'
+' ВставитьРазделТребования Макрос
+'
+'
+    Selection.TypeText Text:="Требования"
+    Selection.Style = ActiveDocument.Styles("Заголовок 1")
+    Selection.TypeParagraph
+    ActiveDocument.Tables.Add Range:=Selection.Range, NumRows:=6, NumColumns:= _
+        3, DefaultTableBehavior:=wdWord9TableBehavior, AutoFitBehavior:= _
+        wdAutoFitFixed
+    Set tbl = Selection.Tables(1)
+    tbl.Columns(1).SetWidth ColumnWidth:=35, RulerStyle:=wdAdjustNone
+    tbl.Columns(2).SetWidth ColumnWidth:=150, RulerStyle:=wdAdjustNone
+    tbl.Columns(3).SetWidth ColumnWidth:=559, RulerStyle:=wdAdjustNone
+    
+    tbl.Rows(1).Range.Font.Bold = True
+    tbl.Rows(1).Shading.Texture = wdTextureNone
+    tbl.Rows(1).Shading.ForegroundPatternColor = wdColorAutomatic
+    tbl.Rows(1).Shading.BackgroundPatternColor = -603923969
+    tbl.Rows(1).Range.ParagraphFormat.Alignment = wdAlignParagraphCenter
+    tbl.Rows(1).Cells(1).Range.Text = "Код"
+    tbl.Rows(1).Cells(2).Range.Text = "Требование"
+    tbl.Rows(1).Cells(3).Range.Text = "Описание"
+    
+    tbl.Rows(2).Cells(1).Range.Text = "Т.1"
+    tbl.Rows(2).Cells(1).Range.Font.Bold = True
+    
+    tbl.Rows(3).Cells(1).Range.Text = "Т.2"
+    tbl.Rows(3).Cells(1).Range.Font.Bold = True
+    
+    tbl.Rows(4).Cells(1).Range.Text = "Т.3"
+    tbl.Rows(4).Cells(1).Range.Font.Bold = True
+    
+    tbl.Rows(5).Cells(1).Range.Text = "Т.4"
+    tbl.Rows(5).Cells(1).Range.Font.Bold = True
+    
+    tbl.Rows(6).Cells(1).Range.Text = "Т.5"
+    tbl.Rows(6).Cells(1).Range.Font.Bold = True
+End Sub
