@@ -64,3 +64,42 @@ Sub ВставитьТаблицуМетаданныхРС()
     Row.Shading.ForegroundPatternColor = wdColorAutomatic
     Row.Shading.BackgroundPatternColor = -603917569
 End Sub
+
+Sub ВставитьРазделВопросы()
+'
+' ВставитьРазделВопросы Макрос
+'
+'
+    Selection.TypeText Text:="Вопросы"
+    Selection.Style = ActiveDocument.Styles("Заголовок 1")
+    Selection.TypeParagraph
+    ActiveDocument.Tables.Add Range:=Selection.Range, NumRows:=6, NumColumns:= _
+        2, DefaultTableBehavior:=wdWord9TableBehavior, AutoFitBehavior:= _
+        wdAutoFitFixed
+    Set tbl = Selection.Tables(1)
+    tbl.Columns(1).SetWidth ColumnWidth:=35, RulerStyle:=wdAdjustNone
+    tbl.Columns(2).SetWidth ColumnWidth:=709, RulerStyle:=wdAdjustNone
+    
+    tbl.Rows(1).Range.Font.Bold = True
+    tbl.Rows(1).Shading.Texture = wdTextureNone
+    tbl.Rows(1).Shading.ForegroundPatternColor = wdColorAutomatic
+    tbl.Rows(1).Shading.BackgroundPatternColor = -603923969
+    tbl.Rows(1).Range.ParagraphFormat.Alignment = wdAlignParagraphCenter
+    tbl.Rows(1).Cells(1).Range.Text = "Код"
+    tbl.Rows(1).Cells(2).Range.Text = "Вопрос"
+    
+    tbl.Rows(2).Cells(1).Range.Text = "В.1"
+    tbl.Rows(2).Cells(1).Range.Font.Bold = True
+    
+    tbl.Rows(3).Cells(1).Range.Text = "В.2"
+    tbl.Rows(3).Cells(1).Range.Font.Bold = True
+    
+    tbl.Rows(4).Cells(1).Range.Text = "В.3"
+    tbl.Rows(4).Cells(1).Range.Font.Bold = True
+    
+    tbl.Rows(5).Cells(1).Range.Text = "В.4"
+    tbl.Rows(5).Cells(1).Range.Font.Bold = True
+    
+    tbl.Rows(6).Cells(1).Range.Text = "В.5"
+    tbl.Rows(6).Cells(1).Range.Font.Bold = True
+End Sub
