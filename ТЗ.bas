@@ -147,3 +147,22 @@ Sub ТЗ_ВставитьРазделТребования()
     tbl.Rows(6).Cells(1).Range.Font.Bold = True
 End Sub
 
+Sub Таблица_Ячейки_СделатьЗаголовком()
+'
+' Таблица_Ячейки_СделатьЗаголовком Макрос
+'
+'
+    For Each cell In Selection.Cells
+        Set rng = cell.Range
+        rng.Font.Bold = wdToggle
+        rng.ParagraphFormat.Alignment = wdAlignParagraphCenter
+        rng.Shading.Texture = wdTextureNone
+        rng.Shading.ForegroundPatternColor = wdColorAutomatic
+        rng.Shading.BackgroundPatternColor = -603923969
+        'Selection.Font.Bold = wdToggle
+        'Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
+        'Selection.Shading.Texture = wdTextureNone
+        'Selection.Shading.ForegroundPatternColor = wdColorAutomatic
+        'Selection.Shading.BackgroundPatternColor = -603923969
+    Next cell
+End Sub
