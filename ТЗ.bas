@@ -159,10 +159,5 @@ Sub Таблица_Ячейки_СделатьЗаголовком()
         rng.Shading.Texture = wdTextureNone
         rng.Shading.ForegroundPatternColor = wdColorAutomatic
         rng.Shading.BackgroundPatternColor = -603923969
-        'Selection.Font.Bold = wdToggle
-        'Selection.ParagraphFormat.Alignment = wdAlignParagraphCenter
-        'Selection.Shading.Texture = wdTextureNone
-        'Selection.Shading.ForegroundPatternColor = wdColorAutomatic
-        'Selection.Shading.BackgroundPatternColor = -603923969
     Next cell
 End Sub
